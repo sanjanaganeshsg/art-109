@@ -1,0 +1,241 @@
+/* Color palette */
+
+:root {
+    --bg-color-1: #eeaeca;
+    --bg-color-2: #cbe2fa;
+    --font: "Montserrat", sans-serif;
+    --accent-1: #00008b;
+    --accent-2: #ffffff;
+    --dark: #fffafa;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--bg-color-1);
+    color: #000000;
+    font-family: var(--font);
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: 3rem 2rem;
+    margin-bottom: 7rem;
+}
+
+header h1 {
+    color: #444444;
+    text-shadow:
+        1px 0px 1px #cccccc,
+        0px 1px 1px #eeeeee,
+        2px 1px 1px #cccccc,
+        1px 2px 1px #eeeeee,
+        3px 2px 1px #cccccc,
+        2px 3px 1px #eeeeee;
+}
+
+nav a {
+    color: #000000;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+nav a:hover {
+    color: var(--accent-2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 750px) {
+    .navbar {
+      align-items: flex-start;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 6rem;
+        right: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: var(--accent-1);
+        padding: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--accent-1);
+        padding: 1rem;
+    }
+
+    .nav-menu a {
+      color: var(--bg-color-1);
+    }
+}
+
+main {
+  margin: 0;
+}
+
+@media (max-width: 1030px) {
+  main {
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    margin: 1rem;
+  }
+}
+
+.about-content, 
+.portfolio-content, 
+.contact-content, 
+.project-content {
+    max-width: 60rem;
+    margin: 0 auto 7rem auto;
+}
+
+.about-content h2, 
+.portfolio-content h2, 
+.contact-content h2, 
+.project-content h2 {
+    margin-bottom: 2rem;
+}
+
+.project-content {
+    text-align: justify;
+}
+
+.project-content img {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.project-content p {
+    padding: 1rem;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flex-item-grid {
+    flex: 1 0 15rem;
+}
+
+.portfolio-item {
+    padding: 1rem;
+    background-color: var(--dark);
+    color: var(--accent-1);
+    border-radius: .3rem;
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: var(--accent-1);
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+} 
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+}
+
+.portfolio-item img {
+    border-radius: .3rem;
+}
+
+footer {
+    padding: 1rem 2rem;
+}
+
+footer img {
+    display: inline;
+    width: 3rem;
+    margin: 0 .5rem;
+}
+
+@media (max-width: 750px){
+  footer p {
+    font-size: 1.2rem;
+  }
+
+  footer img {
+    max-width: 2rem;
+    margin: 0 .2rem;
+  }
+}
+
+@media (max-width: 750px){
+  footer p {
+    font-size: 1rem;
+  }
+
+  footer img {
+    max-width: 1.5rem;
+    margin: 0 .1rem;
+  }
+}
