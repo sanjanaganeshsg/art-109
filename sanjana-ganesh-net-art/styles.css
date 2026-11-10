@@ -1,13 +1,7 @@
 :root {
-    color-scheme: dark;
-    --ink: #fff5fb;
-    --muted: #c4aab9;
     --pink: #ff69b4;
-    --pink-light: #ffb6d9;
+    --white: #fff5fb;
     --black: #090609;
-    --panel: #160e16;
-    --plum: #ff8ac5;
-    --wheel-size: min(82vw, 31.875rem);
 }
 
 * {
@@ -15,130 +9,74 @@
 }
 
 body {
-    position: relative;
-    min-width: 20rem;
     min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    color: var(--ink);
-    background:
-        radial-gradient(ellipse at 50% 42%, rgba(255, 105, 180, 0.12), transparent 35rem),
-        var(--black);
+    background: var(--black);
+    color: var(--white);
     font-family: Verdana, Geneva, sans-serif;
 }
 
 body[data-sign] {
-    background: var(--page-color, var(--black));
-    color: #1a1016;
+    background: var(--sign-color);
 }
 
-body[data-sign="aries"] { --page-color: #ffeb7c; }
-body[data-sign="taurus"] { --page-color: #b78360; }
-body[data-sign="gemini"] { --page-color: #b392d1; }
-body[data-sign="cancer"] { --page-color: #f2a2bb; }
-body[data-sign="leo"] { --page-color: #f3ad50; }
-body[data-sign="virgo"] { --page-color: #a5b886; }
-body[data-sign="libra"] { --page-color: #f1bad7; }
-body[data-sign="scorpio"] { --page-color: #bd7b9d; }
-body[data-sign="sagittarius"] { --page-color: #eea47b; }
-body[data-sign="capricorn"] { --page-color: #b88969; }
-body[data-sign="aquarius"] { --page-color: #91c9ce; }
-body[data-sign="pisces"] { --page-color: #aaa0d5; }
-
-a {
-    color: inherit;
-}
-
-.site-header {
-    width: min(100% - 3.5rem, 70rem);
-    min-height: 4.875rem;
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 0.0625rem solid rgba(255, 105, 180, 0.2);
-}
-
-.wordmark {
-    color: var(--pink);
-    font-size: 0.9375rem;
-    font-weight: 700;
-    letter-spacing: 0.015em;
-    text-decoration: none;
-}
+body[data-sign="aries"] { --sign-color: #ffeb7c; }
+body[data-sign="taurus"] { --sign-color: #b78360; }
+body[data-sign="gemini"] { --sign-color: #b392d1; }
+body[data-sign="cancer"] { --sign-color: #f2a2bb; }
+body[data-sign="leo"] { --sign-color: #f3ad50; }
+body[data-sign="virgo"] { --sign-color: #a5b886; }
+body[data-sign="libra"] { --sign-color: #f1bad7; }
+body[data-sign="scorpio"] { --sign-color: #bd7b9d; }
+body[data-sign="sagittarius"] { --sign-color: #eea47b; }
+body[data-sign="capricorn"] { --sign-color: #b88969; }
+body[data-sign="aquarius"] { --sign-color: #91c9ce; }
+body[data-sign="pisces"] { --sign-color: #aaa0d5; }
 
 main {
     flex: 1;
 }
 
+.home-page {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: #000;
+}
+
+.home-page main {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .intro {
-    max-width: 38.75rem;
-    margin: 2.3125rem auto 0;
-    padding-inline: 1.25rem;
+    margin: 1.25rem auto 0;
+    padding: 0 1.25rem;
     text-align: center;
 }
 
-.eyebrow {
-    margin: 0;
-    color: var(--pink);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.17em;
-    text-transform: uppercase;
-}
-
-h1,
-h2,
-p {
-    margin-top: 0;
-}
-
 .intro h1 {
-    margin: 0.75rem 0 0.5rem;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: clamp(2.25rem, 6vw, 3.3125rem);
-    font-weight: 700;
-    letter-spacing: -0.045em;
-    line-height: 1.12;
-}
-
-.intro h1 span {
+    margin: 0 0 0.5rem;
     color: var(--pink);
+    font-size: clamp(2.25rem, 6vw, 3.3125rem);
 }
 
 .intro-copy {
-    margin-bottom: 0;
-    background: transparent;
-    box-shadow: none;
-    color: var(--muted);
+    margin: 0;
+    color: #fff;
     font-size: 0.875rem;
-    line-height: 1.65;
+    line-height: 1.6;
 }
 
 .zodiac-section {
-    display: grid;
-    place-items: center;
-    margin-top: 1.5625rem;
-}
-
-.zodiac-wheel {
     position: relative;
-    width: var(--wheel-size);
-    aspect-ratio: 1;
-}
-
-.wheel-orbit {
-    position: absolute;
-    inset: 9%;
-    border: 0.0625rem solid rgba(255, 105, 180, 0.3);
-    border-radius: 50%;
-}
-
-.wheel-orbit-inner {
-    inset: 20%;
-    border-color: rgba(255, 105, 180, 0.18);
+    flex: 1;
+    min-height: 0;
+    margin-top: 0.75rem;
 }
 
 .sign-list {
@@ -146,237 +84,71 @@ p {
     inset: 0;
 }
 
-.sign {
+.home-page .sign {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 4.5rem;
-    min-height: 4.3125rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.0625rem;
-    border: 0.0625rem solid rgba(255, 105, 180, 0.28);
-    border-radius: 1.25rem;
-    background: var(--panel);
-    box-shadow: 0 0.3125rem 1rem rgba(0, 0, 0, 0.3);
-    color: var(--pink-light);
-    text-decoration: none;
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(var(--wheel-size) * -0.405)) rotate(calc(var(--angle) * -1));
-    transition: background-color 160ms ease, box-shadow 160ms ease, scale 160ms ease;
-}
-
-.sign:hover,
-.sign:focus-visible {
-    z-index: 1;
-    outline: none;
-    background: #351323;
-    box-shadow: 0 0.4375rem 1.375rem rgba(255, 105, 180, 0.22);
-    scale: 1.08;
-}
-
-.sign > span:first-child {
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.sign-name {
-    font-size: 0.625rem;
-    font-weight: 600;
-}
-
-.wheel-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30%;
+    width: clamp(4.25rem, 8vw, 6.5rem);
     aspect-ratio: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.0625rem;
-    border: 0.0625rem solid rgba(255, 182, 217, 0.45);
+    display: grid;
+    place-items: center;
     border-radius: 50%;
-    background: linear-gradient(145deg, #391627, #21101d 72%);
-    box-shadow: 0 0.5625rem 1.75rem rgba(255, 105, 180, 0.11);
-    transform: translate(-50%, -50%);
-}
-
-.center-cup {
-    font-size: clamp(1.6875rem, 6vw, 2.4375rem);
+    background: var(--pink);
+    box-shadow: 0 0.375rem 1.25rem rgba(255, 105, 180, 0.2);
+    color: #fff;
+    font-size: 0.875rem;
+    overflow-wrap: anywhere;
     line-height: 1.1;
-}
-
-.center-label {
-    color: var(--pink-light);
-    font-size: clamp(0.5rem, 1.7vw, 0.625rem);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    line-height: 1.3;
     text-align: center;
-    text-transform: uppercase;
-}
-
-.back-link {
-    color: var(--pink-light);
-    font-size: 0.75rem;
-    font-weight: 600;
     text-decoration: none;
-}
-
-.back-link:hover,
-.back-link:focus-visible {
-    color: var(--pink);
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
-}
-
-.back-link span {
-    margin-right: 0.25rem;
-}
-
-.site-header,
-.result-main {
-    position: relative;
-    z-index: 1;
-}
-
-body[data-sign] .site-header {
-    border-bottom-color: rgba(26, 16, 22, 0.2);
-}
-
-body[data-sign] .wordmark,
-body[data-sign] .back-link {
-    color: #1a1016;
-}
-
-.pearl-field {
-    position: absolute;
-    z-index: 0;
-    inset: 4.875rem 0 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.floating-object {
-    position: absolute;
-    top: 3rem;
-    left: 1.75rem;
-    animation: wander 16s linear infinite;
-    will-change: transform;
     transform: translate(-50%, -50%);
 }
 
-.pearl {
-    width: 1.25rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #090609;
-    box-shadow: inset -0.1875rem -0.1875rem 0.25rem rgba(255, 255, 255, 0.14);
-}
-
-.drink-emoji {
-    width: 3.5rem;
-    height: 3.5rem;
-    display: grid;
-    place-items: center;
-    font-size: 2.5rem;
-    user-select: none;
-}
-
-.floating-object:nth-child(3n) { animation-duration: 19s; }
-.floating-object:nth-child(3n + 1) { animation-duration: 13s; }
-.floating-object:nth-child(1) { animation-delay: -1s; }
-.floating-object:nth-child(2) { animation-delay: -7s; }
-.floating-object:nth-child(3) { animation-delay: -3s; }
-.floating-object:nth-child(4) { animation-delay: -10s; }
-.floating-object:nth-child(5) { animation-delay: -5s; }
-.floating-object:nth-child(6) { animation-delay: -14s; }
-.floating-object:nth-child(7) { animation-delay: -8s; }
-.floating-object:nth-child(8) { animation-delay: -2s; }
-.floating-object:nth-child(9) { animation-delay: -12s; }
-.floating-object:nth-child(10) { animation-delay: -4s; }
-.floating-object:nth-child(11) { animation-delay: -9s; }
-.floating-object:nth-child(12) { animation-delay: -15s; }
-.floating-object:nth-child(13) { animation-delay: -6s; }
-.floating-object:nth-child(14) { animation-delay: -11s; }
-.floating-object:nth-child(15) { animation-delay: -17s; }
-
-.floating-object:nth-child(4n + 1),
-.floating-object:nth-child(4n + 3) { animation-name: drift-upper; }
-.floating-object:nth-child(4n + 2),
-.floating-object:nth-child(4n) { animation-name: drift-lower; }
-
-@keyframes drift-upper {
-    0% { top: 8%; left: 13%; }
-    25% { top: 22%; left: 42%; }
-    50% { top: 10%; left: 87%; }
-    75% { top: 19%; left: 58%; }
-    100% { top: 8%; left: 13%; }
-}
-
-@keyframes drift-lower {
-    0% { top: 82%; left: 87%; }
-    25% { top: 94%; left: 56%; }
-    50% { top: 80%; left: 13%; }
-    75% { top: 91%; left: 43%; }
-    100% { top: 82%; left: 87%; }
-}
-
-@media (min-width: 80rem) {
-    .floating-object:nth-child(5),
-    .floating-object:nth-child(15) { animation-name: drift-side-left; }
-    .floating-object:nth-child(10) { animation-name: drift-side-right; }
-}
-
-@keyframes drift-side-left {
-    0% { top: 8%; left: calc(50% - 29rem); }
-    25% { top: 31%; left: calc(50% - 29rem); }
-    50% { top: 58%; left: calc(50% - 29rem); }
-    75% { top: 91%; left: calc(50% - 29rem); }
-    100% { top: 8%; left: calc(50% - 29rem); }
-}
-
-@keyframes drift-side-right {
-    0% { top: 91%; left: calc(50% + 29rem); }
-    25% { top: 65%; left: calc(50% + 29rem); }
-    50% { top: 38%; left: calc(50% + 29rem); }
-    75% { top: 8%; left: calc(50% + 29rem); }
-    100% { top: 91%; left: calc(50% + 29rem); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .floating-object {
-        animation: none;
-    }
+.home-page .sign:hover,
+.home-page .sign:focus-visible {
+    outline: none;
+    background: #ed4e9e;
 }
 
 .result-main {
-    min-height: calc(100vh - 4.875rem + 12rem);
+    min-height: 100vh;
     display: grid;
     place-items: center;
-    padding: 3rem 1.5rem;
+    padding: 2rem 1rem;
 }
 
 .sign-order {
     position: relative;
-    z-index: 2;
-    width: min(calc(100% - 3rem), 48rem);
+    width: 100%;
+    min-height: 44rem;
+    display: grid;
+    align-content: center;
+    padding: 7rem 3rem;
+    overflow: hidden;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+    border-radius: 1.5rem;
+    background: var(--black);
+    box-shadow: 0 1.25rem 4rem rgba(0, 0, 0, 0.3);
     text-align: center;
+}
+
+.sign-order h1,
+.sign-order h2,
+.sign-order p {
+    position: relative;
+    z-index: 2;
 }
 
 .sign-order h1 {
     margin: 0 0 1rem;
-    color: #1a1016;
+    color: #fff;
     font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 1.05;
 }
 
 .sign-order h2 {
     margin: 0 0 1.25rem;
-    color: #1a1016;
+    color: var(--sign-color);
     font-size: clamp(1.75rem, 5vw, 3rem);
     line-height: 1.15;
 }
@@ -384,7 +156,7 @@ body[data-sign] .back-link {
 .drink-details,
 .personality {
     margin: 0 auto 1rem;
-    color: #1a1016;
+    color: var(--white);
     font-size: clamp(0.9375rem, 2vw, 1.125rem);
     line-height: 1.7;
 }
@@ -394,81 +166,48 @@ body[data-sign] .back-link {
     margin-top: 2rem;
 }
 
-@media (max-width: 40.625rem) {
-    :root {
-        --wheel-size: min(92vw, 26.875rem);
-    }
-
-    .site-header {
-        width: calc(100% - 2.25rem);
-        min-height: 4.0625rem;
-    }
-
-    .intro {
-        margin-top: 1.8125rem;
-    }
-
-    .intro-copy {
-        max-width: 21.875rem;
-        margin-inline: auto;
-        font-size: 0.8125rem;
-    }
-
-    .sign {
-        width: 3.8125rem;
-        min-height: 3.75rem;
-        border-radius: 1.0625rem;
-    }
-
-    .sign > span:first-child {
-        font-size: 1.3125rem;
-    }
-
-    .sign-name {
-        font-size: 0.5625rem;
-    }
-
-    .result-main {
-        min-height: calc(100vh - 4.0625rem + 12rem);
-        padding: 2rem 0;
-    }
+.pearl-field {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
 }
 
-@media (max-height: 40.625rem) {
-    .result-main {
-        min-height: calc(100vh - 4.0625rem + 30rem);
+.floating-object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.pearl {
+    width: 1.25rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--sign-color);
+    box-shadow: inset -0.1875rem -0.1875rem 0.25rem rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 40.625rem) {
+    .home-page .sign {
+        width: clamp(3.75rem, 16vw, 5rem);
+    }
+
+    .sign-order {
+        padding: 7rem 1.25rem;
     }
 }
 
 @media (max-width: 23.75rem) {
-    :root {
-        --wheel-size: 96vw;
-    }
-
-    .sign {
-        width: 3.375rem;
-        min-height: 3.4375rem;
-    }
-
-    .sign-name {
-        font-size: 0.5rem;
-    }
-
-    .intro h1 {
-        font-size: 2.1875rem;
+    .home-page .sign {
+        width: 3rem;
+        font-size: 0.75rem;
     }
 
     .sign-order h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         overflow-wrap: anywhere;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
     }
 }
