@@ -8,45 +8,31 @@
     <title>The Boba Zodiac</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header class="site-header">
-        <a class="wordmark" href="index.html" aria-label="The Boba Zodiac home">
-            Boba Horoscope
-        </a>
-    </header>
-
+<body class="home-page">
     <main>
         <section class="intro" aria-labelledby="page-title">
-            <h1 id="page-title">What’s in your <span>stars?</span></h1>
+            <h1 id="page-title">Boba Horoscope</h1>
             <p class="intro-copy">Click on your sign to reveal your boba order</p>
         </section>
 
         <section class="zodiac-section" aria-label="Choose your zodiac sign">
-            <div class="zodiac-wheel">
-                <div class="wheel-orbit wheel-orbit-outer" aria-hidden="true"></div>
-                <div class="wheel-orbit wheel-orbit-inner" aria-hidden="true"></div>
-                <nav class="sign-list" aria-label="Zodiac signs">
-                    <a class="sign sign-1" href="aries.html" style="--angle: 0deg" aria-label="Aries"><span aria-hidden="true">♈</span><span class="sign-name">Aries</span></a>
-                    <a class="sign sign-2" href="taurus.html" style="--angle: 30deg" aria-label="Taurus"><span aria-hidden="true">♉</span><span class="sign-name">Taurus</span></a>
-                    <a class="sign sign-3" href="gemini.html" style="--angle: 60deg" aria-label="Gemini"><span aria-hidden="true">♊</span><span class="sign-name">Gemini</span></a>
-                    <a class="sign sign-4" href="cancer.html" style="--angle: 90deg" aria-label="Cancer"><span aria-hidden="true">♋</span><span class="sign-name">Cancer</span></a>
-                    <a class="sign sign-5" href="leo.html" style="--angle: 120deg" aria-label="Leo"><span aria-hidden="true">♌</span><span class="sign-name">Leo</span></a>
-                    <a class="sign sign-6" href="virgo.html" style="--angle: 150deg" aria-label="Virgo"><span aria-hidden="true">♍</span><span class="sign-name">Virgo</span></a>
-                    <a class="sign sign-7" href="libra.html" style="--angle: 180deg" aria-label="Libra"><span aria-hidden="true">♎</span><span class="sign-name">Libra</span></a>
-                    <a class="sign sign-8" href="scorpio.html" style="--angle: 210deg" aria-label="Scorpio"><span aria-hidden="true">♏</span><span class="sign-name">Scorpio</span></a>
-                    <a class="sign sign-9" href="sagittarius.html" style="--angle: 240deg" aria-label="Sagittarius"><span aria-hidden="true">♐</span><span class="sign-name">Sagittarius</span></a>
-                    <a class="sign sign-10" href="capricorn.html" style="--angle: 270deg" aria-label="Capricorn"><span aria-hidden="true">♑</span><span class="sign-name">Capricorn</span></a>
-                    <a class="sign sign-11" href="aquarius.html" style="--angle: 300deg" aria-label="Aquarius"><span aria-hidden="true">♒</span><span class="sign-name">Aquarius</span></a>
-                    <a class="sign sign-12" href="pisces.html" style="--angle: 330deg" aria-label="Pisces"><span aria-hidden="true">♓</span><span class="sign-name">Pisces</span></a>
-                </nav>
-                <div class="wheel-center" aria-hidden="true">
-                    <span class="center-cup">🧋</span>
-                    <span class="center-label">choose<br>your sign</span>
-                </div>
-            </div>
+            <nav class="sign-list" aria-label="Zodiac signs">
+                <a class="sign" href="aries.html">Aries</a>
+                <a class="sign" href="taurus.html">Taurus</a>
+                <a class="sign" href="gemini.html">Gemini</a>
+                <a class="sign" href="cancer.html">Cancer</a>
+                <a class="sign" href="leo.html">Leo</a>
+                <a class="sign" href="virgo.html">Virgo</a>
+                <a class="sign" href="libra.html">Libra</a>
+                <a class="sign" href="scorpio.html">Scorpio</a>
+                <a class="sign" href="sagittarius.html">Sagittarius</a>
+                <a class="sign" href="capricorn.html">Capricorn</a>
+                <a class="sign" href="aquarius.html">Aquarius</a>
+                <a class="sign" href="pisces.html">Pisces</a>
+            </nav>
         </section>
 
     </main>
-
+    <script src="home.js" defer></script>
 </body>
 </html>
