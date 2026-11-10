@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-width: 20rem;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f7a8c4;
+    color: #000;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.game-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem 0.875rem;
+}
+
+.game-heading h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.game-heading p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.score {
+    flex: 0 0 auto;
+    margin: 0.2rem 0 0;
+    color: #720b20;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+#game-area {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 110%, rgba(255, 235, 242, 0.7), transparent 60%),
+        linear-gradient(180deg, #f8b8ce 0%, #f6a4c0 100%);
+}
+
+#player {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    width: 9.5rem;
+    height: auto;
+    transform: translateX(-50%);
+    transition: left 120ms ease-out;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.falling-strawberry {
+    position: absolute;
+    top: 0;
+    width: 4.75rem;
+    height: 3.93rem;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 30rem) {
+    .game-header {
+        padding-inline: 0.875rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #player {
+            transition: none;
+        }
+    }
+
+    .game-heading p {
+        max-width: 16rem;
+    }
+}

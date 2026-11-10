@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strawberry Catch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <header class="game-header">
+        <div class="game-heading">
+            <h1>Strawberry Catch</h1>
+            <p>Use the left and right arrow keys to catch the falling strawberries!</p>
+        </div>
+        <p class="score" aria-live="polite">Score: <span id="score">0</span></p>
+    </header>
+    <main id="game-area" aria-label="Strawberry Catch game">
+        <img
+            id="player"
+            src="Strawberry Shortcake.png"
+            alt="Strawberry Shortcake"
+            draggable="false"
+        >
+    </main>
+</body>
+</html>
